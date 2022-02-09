@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 10%;
+  font-family: "Courier New", Courier, monospace;
+}
+
+ul {
+  list-style: none;
+  padding-left: 2em;
+}
+
+#root {
+  padding-left: 0;
+}
+
+#root > li {
+  margin: 0.5em 0;
+}
+
+input {
+  display: none;
+}
+
+.title {
+  cursor: default;
+}
+
+.header {
+  user-select: none;
+}
+
+.header::before {
+  content: "+";
+  margin-right: 0.5em;
+}
+
+input:checked ~ .header::before {
+  content: "-";
+}
+
+.nested {
+  visibility: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+}
+
+input:checked ~ .nested {
+  visibility: visible;
+  max-height: none;
+  opacity: 1;
+}
+
+.description {
+  color: lightgray;
+}
+
+a:hover + .description {
+  color: gray;
+}
