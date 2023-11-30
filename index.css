@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 10%;
   font-family: "Courier New", Courier, monospace;
+  background-color: #073642;
 }
 
 ul {
@@ -23,10 +24,12 @@ input {
 
 .title {
   cursor: default;
+  color: #eee8d5;
 }
 
 .header {
   user-select: none;
+  color: #eee8d5;
 }
 
 .header::before {
@@ -53,9 +56,16 @@ input:checked ~ .nested {
 }
 
 .description {
-  color: lightgray;
+  color: #586e75;
 }
 
+a {
+  color: #839496;
+}
+
+a:hover {
+  color: #fdf6e3;
+}
 a:hover + .description {
-  color: gray;
+  color: #839496;
 }
