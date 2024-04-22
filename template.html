@@ -13,13 +13,14 @@
         {% for li in lists %}
             <li>
                 <label for="{{ li.id }}">
-                    <input type="checkbox" id="{{ li.id }}" />
-                    <span class="header">{{ li.title }}</span>
+                    <input type="checkbox" id="{{ li.id }}" aria-labelledby="{{ li.id }}-header {{ li.id }}-label"/>
+                    <span id="{{ li.id }}-header" class="header" aria-label="{{ li.title }}.">{{ li.title }}</span>
+                    <div id="{{ li.id }}-label" class="checkbox-label"></div>
                     <ul class="nested">
                         {% for item in li.items %}
                             <li>
-                                <a href="{{ item.href }}" target="_blank">{{ item.title }}</a>
-                                <span class="description">{{"# " if item.description else ""}}{{ item.description }}</span>
+                                <a href="{{ item.href }}" target="_blank" aria-describedby="{{ item.title }}-desc">{{ item.title }}</a>
+                                <span id="{{ item.title }}-desc" class="description" aria-label="{{ item.description }}">{{"# " if item.description else ""}}{{ item.description }}</span>
                             </li>
                         {% endfor %}
                     </ul>

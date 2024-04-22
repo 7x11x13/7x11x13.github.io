@@ -83,3 +83,17 @@ label:has(:focus-visible) {
 a:focus-visible {
   outline :1px solid #dc322f;
 }
+
+.checkbox-label::before {
+  content: "Category unexpanded. Click to expand.";
+}
+
+input:checked ~ .checkbox-label::before {
+  content: "Category expanded. Click to unexpand.";
+}
+
+.checkbox-label {
+  overflow:hidden;
+  height:0;
+  width:0;
+}
