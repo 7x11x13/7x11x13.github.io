@@ -18,8 +18,14 @@ ul {
   margin: 0.5em 0;
 }
 
+.nested > li {
+  margin-left: 1rem;
+}
+
 input {
-  display: none;
+  opacity: 0;
+  width: 0;
+  margin: 0;
 }
 
 .title {
@@ -68,4 +74,12 @@ a:hover {
 }
 a:hover + .description {
   color: #839496;
+}
+
+label:has(:focus-visible) {
+  outline :1px solid #dc322f;
+}
+
+a:focus-visible {
+  outline :1px solid #dc322f;
 }

@@ -1,6 +1,5 @@
-import jinja2
-
 from dataclasses import dataclass
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 @dataclass
 class LinkItem:
@@ -39,10 +38,11 @@ lists = [
     ])
 ]
 
-from jinja2 import Environment, FileSystemLoader, select_autoescape
 env = Environment(
     loader=FileSystemLoader(searchpath="./"),
-    autoescape=select_autoescape()
+    autoescape=select_autoescape(),
+    trim_blocks=True,
+    lstrip_blocks=True
 )
 
 template = env.get_template("template.html")
