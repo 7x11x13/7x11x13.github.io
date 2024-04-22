@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="index.css" />
+    <title>7x11x13</title>
+  </head>
+  <body>
+    <h1 class="title">7x11x13</h1>
+    <ul id="root">
+        {% for li in lists %}
+            <li>
+                <label for="{{ li.id }}">
+                    <input type="checkbox" id="{{ li.id }}" />
+                    <span class="header">{{ li.title }}</span>
+                    <ul class="nested">
+                        {% for item in li.items %}
+                            <li>
+                                <a href="{{ item.href }}" target="_blank">{{ item.title }}</a>
+                                <span class="description">{{"# " if item.description else ""}}{{ item.description }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </label>
+            </li>
+        {% endfor %}
+    </ul>
+  </body>
+</html>
